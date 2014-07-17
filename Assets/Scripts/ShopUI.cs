@@ -10,7 +10,8 @@ public class ShopUI : MonoBehaviour
     int OperationSign;
     bool on;
     Dictionary<string, ButtonData> AllButtonDats;
-    
+
+    public GameObject PrefabRingIndicators;
     public GameObject SpitIndicator;
     public Dictionary<string, UISlate> AlShopUISlates;
     public GameObject ButtonsPrefab;
@@ -19,6 +20,11 @@ public class ShopUI : MonoBehaviour
     public List<GameObject> CurrentButtonsAndSplitters;
     public List<string> MenuLine;
     public string CurrentSlate;
+
+    public GameObject CurrentBuyItem;
+
+    public List<GameObject> RingIndicator;
+
     // Use this for initialization
 
     void Start()
@@ -31,6 +37,22 @@ public class ShopUI : MonoBehaviour
         UIStage = 2;
         LoadButtonsInToSlates();
         CurrentButtonsAndSplitters = new List<GameObject>();
+        RingIndicator = new List<GameObject>();
+
+        for (int i = 0; i < 3; i++)
+        {
+            GameObject NewRing = Instantiate(PrefabRingIndicators) as GameObject;
+            NewRing.transform.position = transform.position;
+            NewRing.transform.localScale = Vector3.one + (Vector3.one * i);
+            if(i == 0)
+            {
+                NewRing.transform.localScale = new Vector3(1.25f, 1.25f, 1);
+            }
+            NewRing.SetActive(false);
+            RingIndicator.Add(NewRing);
+
+        }
+
     }
 
     // Update is called once per frame

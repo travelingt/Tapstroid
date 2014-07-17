@@ -85,15 +85,13 @@ public class PlayerScript : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (CanShoot)
-        {
-            //Called to move the little towers 
-            UpdatePositionOfObirters();
-        }
+
+        //Called to move the little towers 
+        UpdatePositionOfObirters();
 
 
-        Shoot();//Try to shoot
-
+            Shoot();//Try to shoot
+        
         ///Update the amount of money the UI says the character has
         MoneyText.GetComponent<GUIText>().text = "Money: " + Money.ToString();
 
