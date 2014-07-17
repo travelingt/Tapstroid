@@ -53,10 +53,12 @@
      <Compile Include="Assets\Scripts\BrainOfGame.cs" />
      <Compile Include="Assets\Scripts\Bullet.cs" />
      <Compile Include="Assets\Scripts\Buttons.cs" />
+     <Compile Include="Assets\Scripts\CancelButtonScript.cs" />
      <Compile Include="Assets\Scripts\EnBulletScript.cs" />
      <Compile Include="Assets\Scripts\HoverScript.cs" />
      <Compile Include="Assets\Scripts\Orbiter.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
+     <Compile Include="Assets\Scripts\RingIndicator.cs" />
      <Compile Include="Assets\Scripts\ShootUIMeterScript.cs" />
      <Compile Include="Assets\Scripts\ShopUI.cs" />
      <Compile Include="Assets\Scripts\SoundKiller.cs" />

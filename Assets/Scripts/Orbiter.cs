@@ -4,7 +4,7 @@ using System.Collections;
 public class Orbiter : MonoBehaviour {
     public GameObject MiddleObject;
     public GameObject Bullet;
-    public int Ring;
+    public float Ring;
     public float ShootCount;
     void Awake()
     {

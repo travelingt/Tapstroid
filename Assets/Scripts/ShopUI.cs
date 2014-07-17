@@ -9,6 +9,9 @@ public class ShopUI : MonoBehaviour
     bool IsDisplay;
     int OperationSign;
     bool on;
+
+    public static ShopUI Instance;
+    
     Dictionary<string, ButtonData> AllButtonDats;
 
     public GameObject PrefabRingIndicators;
@@ -25,8 +28,16 @@ public class ShopUI : MonoBehaviour
 
     public List<GameObject> RingIndicator;
 
-    // Use this for initialization
+    public GameObject BuyCancelButton;
 
+    // Use this for initialization
+    void Awake()
+    {
+        Instance = this;
+        GameObject n = Instantiate(BuyCancelButton) as GameObject;
+        BuyCancelButton = n;
+        BuyCancelButton.SetActive(false);
+    }
     void Start()
     {
         MenuLine = new List<string>();
@@ -164,7 +175,17 @@ public class ShopUI : MonoBehaviour
 
             case "Buy":
 
-                break;
+                string BuyingModifier = Info.Split('-')[0];
+                if (BuyingModifier == "Upgrade")
+                {
+                    UpgradeBuy(Info.Split('-')[1]);
+                }
+                else if (BuyingModifier == "Tower")
+                {
+                    TowerBuy(Info.Split('-')[1]);
+                }
+
+                    break;
 
             case "Cancel":
                 string Shift = MenuLine[MenuLine.Count -1];
@@ -174,6 +195,37 @@ public class ShopUI : MonoBehaviour
         }
 
     }
+    void UpgradeBuy(string Info)
+    {
+
+    }
+    void TowerBuy(string Info)
+    {
+        for (int i = 0; i < CurrentButtonsAndSplitters.Count; i++)
+        {
+            CurrentButtonsAndSplitters[i].SetActive(false);
+        }
+        for (int i = 0; i < RingIndicator.Count; i++)
+        {
+            RingIndicator[i].SetActive(true);
+        }
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        BuyCancelButton.SetActive(true);
+    }
+    public void TurnUIBackOnAfterDoneWithTowers()
+    {
+        for (int i = 0; i < CurrentButtonsAndSplitters.Count; i++)
+        {
+            CurrentButtonsAndSplitters[i].SetActive(true);
+        }
+        for (int i = 0; i < RingIndicator.Count; i++)
+        {
+            RingIndicator[i].SetActive(false);
+        }
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        BuyCancelButton.SetActive(false);
+    }
+
 
     void LoadButtonsInToSlates()
     {

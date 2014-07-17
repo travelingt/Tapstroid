@@ -12,7 +12,7 @@ public class PlayerScript : MonoBehaviour
     public ShopUI Shop;
 
     //List for the orbiters and the textfile that has the config of them
-    List<Orbiter> AllOrbiters;
+    public List<Orbiter> AllOrbiters;
     TextAsset OribterConfig;
     
     //Varibles for the basic money
@@ -28,6 +28,7 @@ public class PlayerScript : MonoBehaviour
     public int ClipSize;
     public float ShootCost;
 
+    float OrbitorPosition;
     //Used Health Varible
     public float Health;
 
@@ -35,6 +36,7 @@ public class PlayerScript : MonoBehaviour
 
     void Awake()
     {
+        OrbitorPosition = 0;
         ClipSize = 10;
         Clip = ClipSize;
         ShootCost = 1;
@@ -96,16 +98,17 @@ public class PlayerScript : MonoBehaviour
         MoneyText.GetComponent<GUIText>().text = "Money: " + Money.ToString();
 
     }
-    void UpdatePositionOfObirters()
+    public void UpdatePositionOfObirters()
     {
         for (int i = 0; i < AllOrbiters.Count; i++)
         {
 
             AllOrbiters[i].transform.position =
-                new Vector3(Mathf.Cos(Time.timeSinceLevelLoad / 2) * AllOrbiters[i].Ring,
-                    Mathf.Sin(Time.timeSinceLevelLoad / 2) * AllOrbiters[i].Ring,
+                new Vector3(Mathf.Cos(OrbitorPosition) * AllOrbiters[i].Ring,
+                    Mathf.Sin(OrbitorPosition) * AllOrbiters[i].Ring,
                     transform.position.z) + transform.position;
         }
+        OrbitorPosition += .001f;
     }
     void Shoot()
     {
