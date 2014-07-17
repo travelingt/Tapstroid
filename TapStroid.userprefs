@@ -1,0 +1,13 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\Desktop\Builds\Assets\Plugins\Android\AndroidManifest.xml">
+    <Files>
+      <File FileName="Assets\Scripts\PlayerScript.cs" Line="15" Column="29" />
+      <File FileName="..\..\Desktop\Builds\Assets\Plugins\Android\AndroidManifest.xml" Line="16" Column="49" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

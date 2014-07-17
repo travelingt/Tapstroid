@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{0005BACD-5C05-5B77-CDA2-909BD0E0B763}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_5_1;UNITY_4_5;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Scripts\BackgroundCreation.cs" />
+     <Compile Include="Assets\Scripts\BasicAsteroid.cs" />
+     <Compile Include="Assets\Scripts\BasicEnemyScript.cs" />
+     <Compile Include="Assets\Scripts\BomberScript.cs" />
+     <Compile Include="Assets\Scripts\BrainOfGame.cs" />
+     <Compile Include="Assets\Scripts\Bullet.cs" />
+     <Compile Include="Assets\Scripts\Buttons.cs" />
+     <Compile Include="Assets\Scripts\EnBulletScript.cs" />
+     <Compile Include="Assets\Scripts\HoverScript.cs" />
+     <Compile Include="Assets\Scripts\Orbiter.cs" />
+     <Compile Include="Assets\Scripts\PlayerScript.cs" />
+     <Compile Include="Assets\Scripts\ShootUIMeterScript.cs" />
+     <Compile Include="Assets\Scripts\ShopUI.cs" />
+     <Compile Include="Assets\Scripts\SoundKiller.cs" />
+     <Compile Include="Assets\Scripts\StarControl.cs" />
+     <Compile Include="Assets\Scripts\WaveControl.cs" />
+     <Compile Include="Assets\UnityLuaInterfaceTest\Scripts\ExamplePlayer.cs" />
+     <Compile Include="Assets\UnityLuaInterfaceTest\Scripts\LuaInterface\AssemblyInfo.cs" />
+     <Compile Include="Assets\UnityLuaInterfaceTest\Scripts\LuaInterface\CheckType.cs" />
+     <Compile Include="Assets\UnityLuaInterfaceTest\Scripts\LuaInterface\GenerateEventAssembly.cs" />
+     <Compile Include="Assets\UnityLuaInterfaceTest\Scripts\LuaInterface\Lua.cs" />
+     <Compile Include="Assets\UnityLuaInterfaceTest\Scripts\LuaInterface\LuaDLL.cs" />
+     <Compile Include="Assets\UnityLuaInterfaceTest\Scripts\LuaInterface\LuaException.cs" />
+     <Compile Include="Assets\UnityLuaInterfaceTest\Scripts\LuaInterface\Metatables.cs" />
+     <Compile Include="Assets\UnityLuaInterfaceTest\Scripts\LuaInterface\MethodWrapper.cs" />
+     <Compile Include="Assets\UnityLuaInterfaceTest\Scripts\LuaInterface\ObjectTranslator.cs" />
+     <Compile Include="Assets\UnityLuaInterfaceTest\Scripts\LuaInterface\ProxyType.cs" />
+     <Compile Include="Assets\UnityLuaInterfaceTest\Scripts\LuaInterfaceTest.cs" />
+     <None Include="Assets\UnityLuaInterfaceTest\readme.txt" />
+     <None Include="Assets\Resources\WaveData.txt" />
+     <None Include="Assets\Resources\ShopSlates.txt" />
+     <None Include="Assets\Resources\Shop.txt" />
+     <None Include="Assets\Resources\OribterConfig.txt" />
+     <None Include="Assets\UnityLuaInterfaceTest\Scripts\LuaInterface\README.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
