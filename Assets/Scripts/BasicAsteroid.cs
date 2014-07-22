@@ -6,7 +6,9 @@ public class BasicAsteroid : MonoBehaviour {
     public float ShiftWidth;
 	// Use this for initialization
 	void Start () {
-
+        Sprite spr = new Sprite();
+        Texture2D tex = new Texture2D(100, 100);
+        
         Vector3 Direction = PlayerScript.Instance.transform.position - transform.position;
         rigidbody2D.velocity = Direction.normalized;
         Vector2 Shift = new Vector2(Random.Range(-ShiftWidth,ShiftWidth), Random.Range(-ShiftWidth,ShiftWidth));

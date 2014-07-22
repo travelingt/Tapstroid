@@ -6,6 +6,7 @@ public class Orbiter : MonoBehaviour {
     public GameObject Bullet;
     public float Ring;
     public float ShootCount;
+    public float cost;
     void Awake()
     {
         Ring = 1;

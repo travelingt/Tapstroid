@@ -12,6 +12,8 @@ public class ShopUI : MonoBehaviour
 
     public static ShopUI Instance;
     
+    public GameObject FailBuyText;
+
     Dictionary<string, ButtonData> AllButtonDats;
 
     public GameObject PrefabRingIndicators;
@@ -111,6 +113,11 @@ public class ShopUI : MonoBehaviour
                 Destroy(CurrentButtonsAndSplitters[i]);
             }
             CurrentButtonsAndSplitters.Clear();
+            for (int i = 0; i < RingIndicator.Count; i++)
+            {
+                RingIndicator[i].SetActive(false);
+            }
+            BuyCancelButton.SetActive(false);
         }
     }
     public void OnMouseUp()
@@ -201,6 +208,7 @@ public class ShopUI : MonoBehaviour
     }
     void TowerBuy(string Info)
     {
+        RingHolderScript.Instance.CurrentBuyItem = Info;
         for (int i = 0; i < CurrentButtonsAndSplitters.Count; i++)
         {
             CurrentButtonsAndSplitters[i].SetActive(false);
@@ -226,7 +234,7 @@ public class ShopUI : MonoBehaviour
         BuyCancelButton.SetActive(false);
     }
 
-
+    //Takes the ShopSlates.txt and creates the menus based on the buttons loaded before
     void LoadButtonsInToSlates()
     {
         //Load buttons from text tile into, DICTIONARY?, Maybe
@@ -246,12 +254,14 @@ public class ShopUI : MonoBehaviour
                 string Name;
                 string Action;
                 string Info;
+                float Cost;
                 Spr = STR.ReadLine().Split(':')[1];
                 Name = STR.ReadLine().Split(':')[1];
                 Action = STR.ReadLine().Split(':')[1];
                 Info = STR.ReadLine().Split(':')[1];
+                Cost = float.Parse(STR.ReadLine().Split(':')[1]);
                 Sprite LoadSprite = (Sprite)Resources.Load(Spr, typeof(Sprite));
-                HoldButtonData = new ButtonData(Name, Action, Info, LoadSprite);
+                HoldButtonData = new ButtonData(Name, Action, Info, LoadSprite, Cost);
                 AllButtonDats.Add(HoldButtonData.Name, HoldButtonData);
                 print("Button" + Time.timeSinceLevelLoad);
             }
@@ -285,6 +295,7 @@ public class ShopUI : MonoBehaviour
         }
     }
 
+    //Class that is the basics for all menus in the shop you
     public class UISlate
     {
         public string Name;
@@ -303,19 +314,22 @@ public class ShopUI : MonoBehaviour
         }
     }
 
+    //Class that holds the defination of a button once it is loaded from the resources
     public class ButtonData
     {
         public string Name;
         public string Action;
         public string Info;
         public Sprite ThisSpite;
-
-        public ButtonData(string InName, string InAction, string InInfo, Sprite InThisSprite)
+        //If this is 0, than the cost is Zero, if it is -1 than that means the button does not have cost, like a goto menu button
+        public float CostIfAny;
+        public ButtonData(string InName, string InAction, string InInfo, Sprite InThisSprite, float Cost)
         {
             Name = InName;
             Action = InAction;
             Info = InInfo;
             ThisSpite = InThisSprite;
+            CostIfAny = Cost;
         }
 
     }

@@ -14,10 +14,11 @@ public class Buttons : MonoBehaviour {
 
     public ShopUI shopUI;
 
+    public float cost;
+    
 	// Use this for initialization
 	void Start () {
       
-
 	}
 	
 	// Update is called once per frame

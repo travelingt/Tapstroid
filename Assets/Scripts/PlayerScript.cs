@@ -17,7 +17,8 @@ public class PlayerScript : MonoBehaviour
     
     //Varibles for the basic money
     public GameObject MoneyText;
-    public int Money;
+    public float Money;
+    public GameObject FailText;
 
     //Singelton of the script
     public static PlayerScript Instance;
@@ -89,7 +90,7 @@ public class PlayerScript : MonoBehaviour
     {
 
         //Called to move the little towers 
-        UpdatePositionOfObirters();
+        UpdatePositionOfObirters(.001f);
 
 
             Shoot();//Try to shoot
@@ -98,7 +99,7 @@ public class PlayerScript : MonoBehaviour
         MoneyText.GetComponent<GUIText>().text = "Money: " + Money.ToString();
 
     }
-    public void UpdatePositionOfObirters()
+    public void UpdatePositionOfObirters(float Increment)
     {
         for (int i = 0; i < AllOrbiters.Count; i++)
         {
@@ -108,7 +109,7 @@ public class PlayerScript : MonoBehaviour
                     Mathf.Sin(OrbitorPosition) * AllOrbiters[i].Ring,
                     transform.position.z) + transform.position;
         }
-        OrbitorPosition += .001f;
+        OrbitorPosition += Increment;
     }
     void Shoot()
     {
