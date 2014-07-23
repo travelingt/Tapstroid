@@ -1,6 +1,8 @@
 fileFormatVersion: 2
-guid: 8e5b5345f311b424f9a5cd5e0e6f946d
+guid: a874e1aa006493b4bb94e28475fe3c7f
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: Ring 1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -24,9 +26,9 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 1
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50

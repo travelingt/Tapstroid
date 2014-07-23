@@ -16,6 +16,6 @@ public class CancelButtonScript : MonoBehaviour {
     void OnMouseDown()
     {
 
-        ShopUI.Instance.TurnUIBackOnAfterDoneWithTowers();
+       
     }
 }

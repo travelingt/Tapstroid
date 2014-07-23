@@ -1,6 +1,8 @@
 fileFormatVersion: 2
-guid: aab7b9feda5a7f84c9746ce18acfb463
+guid: 7bbaf1a4667ab0a42b1e62024d699bb4
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: BasicTowerShop
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -36,7 +38,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 320
+  spritePixelsToUnits: 640
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []

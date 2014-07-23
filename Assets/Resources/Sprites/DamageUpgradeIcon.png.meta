@@ -1,6 +1,8 @@
 fileFormatVersion: 2
-guid: a874e1aa006493b4bb94e28475fe3c7f
+guid: c0ac528e4138db542a77706621745cc5
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: DamageUpgradeIcon
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -36,7 +38,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 320
+  spritePixelsToUnits: 640
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []

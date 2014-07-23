@@ -27,7 +27,7 @@ public class Buttons : MonoBehaviour {
 	}
     void OnMouseDown()
     {
-        shopUI.PreformAction(Action, Info);
+    
     }
     void OnMouseUp()
     {

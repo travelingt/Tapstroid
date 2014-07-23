@@ -175,13 +175,4 @@ public class PlayerScript : MonoBehaviour
     }
 
 
-    void OnMouseDown()
-    {
-        Shop.OnMouseDown();
-    }
-    void OnMouseUp()
-    {
-        Shop.OnMouseUp();
-    }
-   
 }

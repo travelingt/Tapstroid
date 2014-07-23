@@ -11,7 +11,7 @@ public class FailTextControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        transform.localScale *= .99f;
+        transform.localScale *= .9f;
         
         if(transform.localScale.x <=.1f)
         {

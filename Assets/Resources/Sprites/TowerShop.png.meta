@@ -1,6 +1,8 @@
 fileFormatVersion: 2
-guid: c0ac528e4138db542a77706621745cc5
+guid: af786eb7a0eeb2547aafb117b87756c2
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: TowerShop
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -24,9 +26,9 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 1
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50

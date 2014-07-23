@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\BackgroundCreation.cs" />
      <Compile Include="Assets\Scripts\BasicAsteroid.cs" />
      <Compile Include="Assets\Scripts\BasicEnemyScript.cs" />
+     <Compile Include="Assets\Scripts\BasicOrbitorScript.cs" />
      <Compile Include="Assets\Scripts\BomberScript.cs" />
      <Compile Include="Assets\Scripts\BrainOfGame.cs" />
      <Compile Include="Assets\Scripts\Bullet.cs" />
@@ -59,8 +60,6 @@
      <Compile Include="Assets\Scripts\HoverScript.cs" />
      <Compile Include="Assets\Scripts\Orbiter.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
-     <Compile Include="Assets\Scripts\RingHolderScript.cs" />
-     <Compile Include="Assets\Scripts\RingIndicator.cs" />
      <Compile Include="Assets\Scripts\ShootUIMeterScript.cs" />
      <Compile Include="Assets\Scripts\ShopUI.cs" />
      <Compile Include="Assets\Scripts\SoundKiller.cs" />
@@ -80,8 +79,8 @@
      <Compile Include="Assets\UnityLuaInterfaceTest\Scripts\LuaInterfaceTest.cs" />
      <None Include="Assets\UnityLuaInterfaceTest\readme.txt" />
      <None Include="Assets\Resources\WaveData.txt" />
-     <None Include="Assets\Resources\ShopSlates.txt" />
-     <None Include="Assets\Resources\Shop.txt" />
+     <None Include="Assets\Resources\ShopText\ShopSlates.txt" />
+     <None Include="Assets\Resources\ShopText\Shop.txt" />
      <None Include="Assets\Resources\OribterConfig.txt" />
      <None Include="Assets\UnityLuaInterfaceTest\Scripts\LuaInterface\README.txt" />
   </ItemGroup>

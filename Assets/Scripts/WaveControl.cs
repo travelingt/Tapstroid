@@ -57,7 +57,7 @@ public class WaveControl : MonoBehaviour {
         {
 
             //If not try and load it
-            GameObject LoadEnemy = (GameObject)Resources.Load("Enemy" + EnemyIdNum.ToString(), typeof(GameObject));
+            GameObject LoadEnemy = (GameObject)Resources.Load("Prefabs/Enemy" + EnemyIdNum.ToString(), typeof(GameObject));
             if (LoadEnemy != null)
             {
 
