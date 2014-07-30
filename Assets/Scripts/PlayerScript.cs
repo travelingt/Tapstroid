@@ -47,6 +47,7 @@ public class PlayerScript : MonoBehaviour
         OribterConfig = (TextAsset)Resources.Load("OribterConfig", typeof(TextAsset));
         CanShoot = true;
 
+        #region OLD
         string[] Lines = OribterConfig.text.Split('\n');
         for (int i = 0; i < Lines.Length; i++)
         {
@@ -73,6 +74,8 @@ public class PlayerScript : MonoBehaviour
                 }
             }
         }
+        #endregion
+
     }
     // Use this for initialization
     void Start()
@@ -174,5 +177,5 @@ public class PlayerScript : MonoBehaviour
         Health -= AttemptedDamage;
     }
 
-
+    
 }

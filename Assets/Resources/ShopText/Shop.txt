@@ -20,6 +20,13 @@ info:Tower-Basic
 cost:100
 }
 {
+sprite:MiningDroidShop
+name:BasicMiningDroidBuy
+action:Buy
+info:Droid:Basic
+cast:100
+}
+{
 sprite:BlockTowerShop
 name:BlockTowerBuy
 action:Buy

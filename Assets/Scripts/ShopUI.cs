@@ -36,9 +36,7 @@ public class ShopUI : MonoBehaviour
     void Awake()
     {
         Instance = this;
-        GameObject n = Instantiate(BuyCancelButton) as GameObject;
-        BuyCancelButton = n;
-        BuyCancelButton.SetActive(false);
+       
     }
     void Start()
     {
@@ -52,7 +50,7 @@ public class ShopUI : MonoBehaviour
         CurrentButtonsAndSplitters = new List<GameObject>();
         RingIndicator = new List<GameObject>();
 
-       
+     //   DisplayMenu("Main");
       
 
     }
@@ -71,12 +69,63 @@ public class ShopUI : MonoBehaviour
     {
 
     }
-   
-    
 
-    
-    
-   
+
+
+
+    public void DisplayMenu(string Menu)
+    {
+
+        if (CurrentButtonsAndSplitters.Count > 0)
+        {
+            for (int i = 0; i < CurrentButtonsAndSplitters.Count; i++)
+            {
+                Destroy(CurrentButtonsAndSplitters[i]);
+            }
+            CurrentButtonsAndSplitters.Clear();
+        }
+
+       UISlate CreatingMenu = AlShopUISlates[Menu];
+
+       for (int i = 0; i < CreatingMenu.ButtonsInThisSlate.Count; i++)
+       {
+           GameObject NewBut = Instantiate(ButtonsPrefab) as GameObject;
+           NewBut.GetComponent<SpriteRenderer>().sprite = CreatingMenu.ButtonsInThisSlate[i].ThisSpite;
+           NewBut.GetComponent<Buttons>().Action = CreatingMenu.ButtonsInThisSlate[i].Action;
+           NewBut.GetComponent<Buttons>().Info = CreatingMenu.ButtonsInThisSlate[i].Info;
+           NewBut.GetComponent<Buttons>().shopUI = this;
+
+           NewBut.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width - ((Screen.width/10) * i) , Screen.width * .1f, -Camera.main.transform.position.z));
+           NewBut.transform.position -= new Vector3(NewBut.GetComponent<SpriteRenderer>().sprite.bounds.size.x * .75f,0,0);
+           CurrentButtonsAndSplitters.Add(NewBut);
+           NewBut.transform.parent = transform;
+       }
+
+    }
+
+    public void PreformAction(string Action, string info)
+    {
+        switch (Action)
+        {
+            case "Open":
+                DisplayMenu(info);
+                break;
+
+            case"Buy":
+                if (info.Contains("Droid"))
+                {
+                   
+                    GameObject MD = (GameObject)Resources.Load("Prefabs/MiningDroid", typeof(GameObject));
+                    GameObject MinEDroid = Instantiate(MD) as GameObject;
+                    MinEDroid.transform.position = PlayerScript.Instance.transform.position;
+                    
+                    BackgroundCreation.Instance.SendMiningDroid(MinEDroid);
+                }
+                break;
+            default:
+                break;
+        }
+    }
 
     //Takes the ShopSlates.txt and creates the menus based on the buttons loaded before
     void LoadButtonsInToSlates()

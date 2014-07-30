@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\BackGroundShopUI.cs" />
      <Compile Include="Assets\Scripts\BackgroundCreation.cs" />
      <Compile Include="Assets\Scripts\BasicAsteroid.cs" />
      <Compile Include="Assets\Scripts\BasicEnemyScript.cs" />
@@ -58,9 +59,11 @@
      <Compile Include="Assets\Scripts\EnBulletScript.cs" />
      <Compile Include="Assets\Scripts\FailTextControl.cs" />
      <Compile Include="Assets\Scripts\HoverScript.cs" />
+     <Compile Include="Assets\Scripts\MiningDroid.cs" />
      <Compile Include="Assets\Scripts\Orbiter.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
      <Compile Include="Assets\Scripts\ShootUIMeterScript.cs" />
+     <Compile Include="Assets\Scripts\ShopSlideButton.cs" />
      <Compile Include="Assets\Scripts\ShopUI.cs" />
      <Compile Include="Assets\Scripts\SoundKiller.cs" />
      <Compile Include="Assets\Scripts\StarControl.cs" />
